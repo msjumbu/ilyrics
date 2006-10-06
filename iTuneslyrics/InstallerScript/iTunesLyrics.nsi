@@ -62,11 +62,15 @@ Section "iTunes Lyrics Importer" SecDummy
   SetOutPath "$INSTDIR"
   
   ;Put file there
-  File "bin\Release\Interop.iTunesLib.dll"
-  File "bin\Release\iTuneslyrics.exe"
+  File "..\bin\Release\Interop.iTunesLib.dll"
+  File "..\bin\Release\iTuneslyrics.exe"
   
   ;Store installation folder
   WriteRegStr HKCU "Software\iLyrics" "" $INSTDIR
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iLyrics" \
+                 "DisplayName" "iTunes Lyrics Importer"
+WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iLyrics" \
+                 "UninstallString" "$INSTDIR\Uninstall.exe"
   
   ;Create uninstaller
   WriteUninstaller "$INSTDIR\Uninstall.exe"
@@ -125,5 +129,6 @@ Section "Uninstall"
   startMenuDeleteLoopDone:
 
   DeleteRegKey /ifempty HKCU "Software\iLyrics"
+  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iLyrics"
 
 SectionEnd
