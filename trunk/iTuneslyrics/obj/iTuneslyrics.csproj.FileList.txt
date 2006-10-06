@@ -1,0 +1,14 @@
+bin\Release\iTuneslyrics.exe.config
+bin\Release\iTuneslyrics.exe
+bin\Release\iTuneslyrics.XmlSerializers.dll
+bin\Release\Interop.iTunesLib.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Interop.iTunesLib.dll
+obj\Release\iTuneslyrics.csproj.ResolveComReference.cache
+obj\Release\iTuneslyrics.ManualUpdate.resources
+obj\Release\iTuneslyrics.iLyrics.resources
+obj\Release\iTuneslyrics.frmResult.resources
+obj\Release\iTuneslyrics.Properties.Resources.resources
+obj\Release\iTuneslyrics.csproj.GenerateResource.Cache
+obj\Release\iTuneslyrics.exe
+obj\Release\iTuneslyrics.XmlSerializers.dll
