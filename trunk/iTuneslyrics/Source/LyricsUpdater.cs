@@ -36,7 +36,7 @@ namespace iTuneslyrics
                     if (m_lyricsWiki.checkSongExists(artist, song) == true)
                     {
                         org.lyricwiki.LyricsResult result = m_lyricsWiki.getSong(artist, song);
-                        if (m_overwrite || currentTrack.Lyrics.Equals("")) 
+                        if (m_overwrite || currentTrack.Lyrics == null || currentTrack.Lyrics.Equals("")) 
                             currentTrack.Lyrics = result.lyrics;
 
                         m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, true });
