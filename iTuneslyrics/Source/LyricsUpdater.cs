@@ -26,30 +26,38 @@ namespace iTuneslyrics
             for (int i = 1; i <= m_selectedTracks.Count; i++)
             {
                 IITFileOrCDTrack currentTrack = (IITFileOrCDTrack)m_selectedTracks[i];
+
+                String artist = currentTrack.Artist;
+                String song = currentTrack.Name;
+                String[] row = { song, artist, "Processing..." };
+                int index = (int)m_form.Invoke(m_form.m_DelegateAddRow, new Object[] { row });
+
+                if (currentTrack.Lyrics != null && !m_overwrite)
+                {
+                    m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "skip" });
+                    continue;
+                }
+
                 try
                 {
-                    String artist = currentTrack.Artist;
-                    String song = currentTrack.Name;
-                    String[] row = { song, artist, "Processing..." };
-                    int index = (int)m_form.Invoke(m_form.m_DelegateAddRow, new Object[] { row });
-
                     if (m_lyricsWiki.checkSongExists(artist, song) == true)
                     {
                         org.lyricwiki.LyricsResult result = m_lyricsWiki.getSong(artist, song);
-                        if (m_overwrite || currentTrack.Lyrics == null || currentTrack.Lyrics.Equals("")) 
+                        if (m_overwrite || currentTrack.Lyrics.Equals("")) 
                             currentTrack.Lyrics = result.lyrics;
 
-                        m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, true });
+                        m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "true" });
                     }
                     else
                     {
-                        m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, false });
+                        m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "false" });
                     }
                 }
                 catch (Exception e)
                 {
                     //throw;
                     MessageBox.Show(e.Message);
+                    m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "false" });
                 }
             }
             MessageBox.Show("Completed");
