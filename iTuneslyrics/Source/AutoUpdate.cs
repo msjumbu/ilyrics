@@ -13,7 +13,7 @@ namespace iTuneslyrics
     // delegates used to call MainForm functions from
     //  worker thread
     public delegate int DelegateAddRow(String[] row);
-    public delegate void DelegateUpdateRow(int index, Boolean result);
+    public delegate void DelegateUpdateRow(int index, String result);
 
     public partial class frmResult : Form
     {
@@ -58,16 +58,22 @@ namespace iTuneslyrics
             return index;
         }
 
-        private void updateRow(int index, Boolean result)
+        private void updateRow(int index, String result)
         {
-            if (result == true)
+            if (result == "true")
             {
                 this.dataGridView1.Rows[index].Cells[2].Value = "Updated";
             }
-            else
+            else if(result == "false")
             {
                 this.dataGridView1.Rows[index].Cells[2].Value = "Not Found";
                 this.dataGridView1.Rows[index].ErrorText = "No mathcing song found";
+            }
+            else if (result == "skip")
+            {
+                this.dataGridView1.Rows[index].Cells[2].Value = "Skipped";
+                this.dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.YellowGreen;
+                //this.dataGridView1.Rows[index].ErrorText = "No mathcing song found";
             }
         }
 
