@@ -12,7 +12,7 @@
 
   ;Name and file
   Name "iTunes Lyrics Importer"
-  OutFile "iLyrics.exe"
+  OutFile "iLyrics 1.1.exe"
 
   ;Default installation folder
   InstallDir "$PROGRAMFILES\iLyrics"
