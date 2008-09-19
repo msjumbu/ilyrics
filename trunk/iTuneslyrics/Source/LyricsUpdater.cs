@@ -30,7 +30,8 @@ namespace iTuneslyrics
                 String artist = currentTrack.Artist;
                 String song = currentTrack.Name;
 
-                if (!string.IsNullOrEmpty(artist) && !string.IsNullOrEmpty(song))
+                if (!string.IsNullOrEmpty(currentTrack.Location) && 
+                    !string.IsNullOrEmpty(artist) && !string.IsNullOrEmpty(song))
                 {
                     String[] row = { song, artist, "Processing..." };
                     int index = (int)m_form.Invoke(m_form.m_DelegateAddRow, new Object[] { row });
