@@ -38,7 +38,7 @@ namespace iTuneslyrics
             // 
             // btnAlbums
             // 
-            this.btnAlbums.Location = new System.Drawing.Point(12, 54);
+            this.btnAlbums.Location = new System.Drawing.Point(301, 8);
             this.btnAlbums.Name = "btnAlbums";
             this.btnAlbums.Size = new System.Drawing.Size(75, 23);
             this.btnAlbums.TabIndex = 1;
@@ -54,13 +54,13 @@ namespace iTuneslyrics
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(388, 89);
+            this.panel1.Size = new System.Drawing.Size(388, 45);
             this.panel1.TabIndex = 3;
             // 
             // chkOverwrite
             // 
             this.chkOverwrite.AutoSize = true;
-            this.chkOverwrite.Location = new System.Drawing.Point(146, 31);
+            this.chkOverwrite.Location = new System.Drawing.Point(144, 12);
             this.chkOverwrite.Name = "chkOverwrite";
             this.chkOverwrite.Size = new System.Drawing.Size(71, 17);
             this.chkOverwrite.TabIndex = 3;
@@ -70,7 +70,7 @@ namespace iTuneslyrics
             // chkAuto
             // 
             this.chkAuto.AutoSize = true;
-            this.chkAuto.Location = new System.Drawing.Point(13, 31);
+            this.chkAuto.Location = new System.Drawing.Point(12, 12);
             this.chkAuto.Name = "chkAuto";
             this.chkAuto.Size = new System.Drawing.Size(126, 17);
             this.chkAuto.TabIndex = 2;
@@ -81,12 +81,13 @@ namespace iTuneslyrics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 89);
+            this.ClientSize = new System.Drawing.Size(388, 45);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "iLyrics";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iTunes Lyrics Importer";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
