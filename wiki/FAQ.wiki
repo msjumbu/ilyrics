@@ -1,0 +1,14 @@
+#summary Frequently Asked Questions for iTunesLyrics
+#labels Featured
+
+=Downloaded lyrics have weird characters. Why?=
+
+Please download the latest version after v1.1 which has this issue fixed. 
+
+=iLyrics doesn't exclude "ft." or "feat." from song names?=
+
+This behavior is currently not yet supported in iLyrics, however this functionality is currently available through [http://code.google.com/p/itsfv/ iTSfv].
+
+=Only accepts exact matches? Would be nice to see a way to choose from close matches.=
+
+This feature is planned for the future.
