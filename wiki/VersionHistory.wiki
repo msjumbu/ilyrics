@@ -1,10 +1,12 @@
 #summary Version History for iLyrics
 #labels Phase-Implementation,Featured
 
+ * 1.1.1.1 blank artist and name tags will be skipped in batch mode
+
 ===Version 1.1.1===
 
- * support for UTF-8 characters thanks to davidreis
- * ability to overwrite lyrics in automatic mode
+ * 1.1.1.0 ability to overwrite lyrics in automatic mode
+ * 1.1.0.1 support for UTF-8 characters thanks to davidreis
 
 ==Version 1.1==
 
