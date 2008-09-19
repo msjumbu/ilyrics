@@ -1,5 +1,5 @@
 #summary Version History for iLyrics
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 
 ===Version 1.1.1===
 
