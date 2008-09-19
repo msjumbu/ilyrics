@@ -29,37 +29,41 @@ namespace iTuneslyrics
 
                 String artist = currentTrack.Artist;
                 String song = currentTrack.Name;
-                String[] row = { song, artist, "Processing..." };
-                int index = (int)m_form.Invoke(m_form.m_DelegateAddRow, new Object[] { row });
 
-                if (currentTrack.Lyrics != null && !m_overwrite)
+                if (!string.IsNullOrEmpty(artist) && !string.IsNullOrEmpty(song))
                 {
-                    m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "skip" });
-                    continue;
-                }
+                    String[] row = { song, artist, "Processing..." };
+                    int index = (int)m_form.Invoke(m_form.m_DelegateAddRow, new Object[] { row });
 
-                try
-                {
-                    if (m_lyricsWiki.checkSongExists(artist, song) == true)
+                    if (currentTrack.Lyrics != null && !m_overwrite)
                     {
-                        org.lyricwiki.LyricsResult result = m_lyricsWiki.getSong(artist, song);
-                        if (m_overwrite || currentTrack.Lyrics == null)
-                        {
-                            Encoding iso8859 = Encoding.GetEncoding("ISO-8859-1");
-                            currentTrack.Lyrics = Encoding.UTF8.GetString(iso8859.GetBytes(result.lyrics));
-                        }
-                        m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "true" });
+                        m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "skip" });
+                        continue;
                     }
-                    else
+
+                    try
                     {
+                        if (m_lyricsWiki.checkSongExists(artist, song) == true)
+                        {
+                            org.lyricwiki.LyricsResult result = m_lyricsWiki.getSong(artist, song);
+                            if (m_overwrite || currentTrack.Lyrics == null)
+                            {
+                                Encoding iso8859 = Encoding.GetEncoding("ISO-8859-1");
+                                currentTrack.Lyrics = Encoding.UTF8.GetString(iso8859.GetBytes(result.lyrics));
+                            }
+                            m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "true" });
+                        }
+                        else
+                        {
+                            m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "false" });
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        //throw;
+                        MessageBox.Show(e.Message);
                         m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "false" });
                     }
-                }
-                catch (Exception e)
-                {
-                    //throw;
-                    MessageBox.Show(e.Message);
-                    m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "false" });
                 }
             }
             MessageBox.Show("Completed");
