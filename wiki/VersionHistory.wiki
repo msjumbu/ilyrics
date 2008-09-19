@@ -1,0 +1,17 @@
+#summary Version History for iLyrics
+#labels Phase-Implementation
+
+===Version 1.1.1===
+
+ * support for UTF-8 characters
+ * ability to overiwrite lyrics in automatic mode
+
+==Version 1.1==
+
+ * a few bug fixes
+ * update will now skip the song, for which the lyrics already exists in itunes. 
+
+
+=Version 1.0=
+
+ * Initial Release
