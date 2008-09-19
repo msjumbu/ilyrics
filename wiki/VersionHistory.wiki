@@ -3,7 +3,7 @@
 
 ===Version 1.1.1===
 
- * support for UTF-8 characters
+ * support for UTF-8 characters thanks to davidreis
  * ability to overiwrite lyrics in automatic mode
 
 ==Version 1.1==
