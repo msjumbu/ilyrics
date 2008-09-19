@@ -43,9 +43,11 @@ namespace iTuneslyrics
                     if (m_lyricsWiki.checkSongExists(artist, song) == true)
                     {
                         org.lyricwiki.LyricsResult result = m_lyricsWiki.getSong(artist, song);
-                        if (m_overwrite || currentTrack.Lyrics == null) 
-                            currentTrack.Lyrics = result.lyrics;
-
+                        if (m_overwrite || currentTrack.Lyrics == null)
+                        {
+                            Encoding iso8859 = Encoding.GetEncoding("ISO-8859-1");
+                            currentTrack.Lyrics = Encoding.UTF8.GetString(iso8859.GetBytes(result.lyrics));
+                        }
                         m_form.Invoke(m_form.m_DelegateUpdateRow, new Object[] { index, "true" });
                     }
                     else
