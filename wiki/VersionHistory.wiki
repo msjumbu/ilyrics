@@ -1,6 +1,7 @@
 #summary Version History for iLyrics
 #labels Phase-Implementation,Featured
 
+ * 1.1.1.2 fixed crashes while processing deleted files
  * 1.1.1.1 blank artist and name tags will be skipped in batch mode
 
 ===Version 1.1.1===
