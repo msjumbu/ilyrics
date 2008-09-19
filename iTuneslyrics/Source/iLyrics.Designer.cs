@@ -31,8 +31,8 @@ namespace iTuneslyrics
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iLyrics));
             this.btnAlbums = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chkAuto = new System.Windows.Forms.CheckBox();
             this.chkOverwrite = new System.Windows.Forms.CheckBox();
+            this.chkAuto = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,16 @@ namespace iTuneslyrics
             this.panel1.Size = new System.Drawing.Size(388, 89);
             this.panel1.TabIndex = 3;
             // 
+            // chkOverwrite
+            // 
+            this.chkOverwrite.AutoSize = true;
+            this.chkOverwrite.Location = new System.Drawing.Point(146, 31);
+            this.chkOverwrite.Name = "chkOverwrite";
+            this.chkOverwrite.Size = new System.Drawing.Size(71, 17);
+            this.chkOverwrite.TabIndex = 3;
+            this.chkOverwrite.Text = "Overwrite";
+            this.chkOverwrite.UseVisualStyleBackColor = true;
+            // 
             // chkAuto
             // 
             this.chkAuto.AutoSize = true;
@@ -66,18 +76,6 @@ namespace iTuneslyrics
             this.chkAuto.TabIndex = 2;
             this.chkAuto.Text = "Update Automatically";
             this.chkAuto.UseVisualStyleBackColor = true;
-            this.chkAuto.CheckedChanged += new System.EventHandler(this.chkAuto_CheckedChanged);
-            // 
-            // chkOverwrite
-            // 
-            this.chkOverwrite.AutoSize = true;
-            this.chkOverwrite.Enabled = false;
-            this.chkOverwrite.Location = new System.Drawing.Point(146, 31);
-            this.chkOverwrite.Name = "chkOverwrite";
-            this.chkOverwrite.Size = new System.Drawing.Size(71, 17);
-            this.chkOverwrite.TabIndex = 3;
-            this.chkOverwrite.Text = "Overwrite";
-            this.chkOverwrite.UseVisualStyleBackColor = true;
             // 
             // iLyrics
             // 

@@ -44,8 +44,8 @@ namespace iTuneslyrics
                 for (int i = 1; i <= selectedTracks.Count; i++)
                 {
                     IITFileOrCDTrack currentTrack = (IITFileOrCDTrack)selectedTracks[i];
-                    if (currentTrack.Lyrics != null)
-                        continue;
+                    //if (currentTrack.Lyrics != null)
+                    //    continue;
 
                     updatedSongsCount++;
                     ManualUpdate ab = new ManualUpdate();
@@ -60,14 +60,6 @@ namespace iTuneslyrics
                 else
                     MessageBox.Show("Update completed");
             }
-        }
-
-        private void chkAuto_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkAuto.Checked)
-                chkOverwrite.Enabled = true;
-            else
-                chkOverwrite.Enabled = false;
         }
     }
 }

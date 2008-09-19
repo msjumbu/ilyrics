@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Reflection;
 using iTunesLib;
+using System.Text;
 
 namespace iTuneslyrics
 {
@@ -135,7 +136,8 @@ namespace iTuneslyrics
                 if (lyricsWiki.checkSongExists(artist, song) == true)
                 {
                     org.lyricwiki.LyricsResult result = lyricsWiki.getSong(artist, song);
-                    lyricsBox.Text = result.lyrics;
+                    Encoding iso8859 = Encoding.GetEncoding("ISO-8859-1"); // thanks to davidreis
+                    lyricsBox.Text = Encoding.UTF8.GetString(iso8859.GetBytes(result.lyrics));
                 }
                 else
                 {
